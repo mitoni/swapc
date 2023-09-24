@@ -16,6 +16,7 @@ Supported events are all events that can be registered by the `node.addEventList
 
 You can select a different node as target of the function by speciifying the `sw-target` attribute with a query selector.
 
+### Syntax
 There are three methods of swapping between classes: add, remove and toggle.
 To add a class at a certain event you write it with a + at the beginning, and a - to remove it. For example to make a text red on mouse enter and back to black on mouse leave:
 ```html
@@ -37,6 +38,7 @@ Or just toggling the class:
 </div>
 ```
 
+### Target another node
 You can define a target with `sw-target` attribute
 ```html
 <div id="target">
@@ -52,6 +54,7 @@ You can define a target with `sw-target` attribute
 </div>
 ```
 
+### Current node sobstitution
 Every node containing an `sw` tag will be associated with an unique id `sw-id`. In this way you can query starting from this node by using the `$this` word (jQuery ❤️).
 For example: 
 ```html
@@ -62,6 +65,14 @@ For example:
     <p>
         I am the target paragraph
     </p>
+</div>
+```
+
+### Delay
+`sw-delay` can delay the execution of the function
+```html
+<div sw-mouseenter="text-red" sw-mouseleave="text-red" sw-delay="1000">
+    I will become red after 1 second
 </div>
 ```
 
