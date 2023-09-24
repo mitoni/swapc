@@ -1,4 +1,5 @@
 const tag = "sw-";
+const thisTag = "$this";
 
 const directEvents = [
     "click",
@@ -11,16 +12,26 @@ const indirectEvents = [
     "leave"
 ]
 
+function id(t = 6) {
+    return crypto.getRandomValues(new Uint8Array(t)).reduce(((t, e) => t += (e &= 63) < 36 ? e.toString(36) : e < 62 ? (e - 26).toString(36).toUpperCase() : e > 62 ? "-" : "_"), "");
+}
+
 function assignEvents() {
+    console.log(id());
     for (const event of directEvents) {
         const attr = tag + event;
         const nodes = document.querySelectorAll(`[${attr}]`);
 
         for (const node of nodes) {
+            // assign id 
+            const nodeId = id();
+            node.setAttribute(`${tag}id`, nodeId);
+
             let target = node;
 
-            const targetAttr = node.getAttribute(`${tag}target`);
+            let targetAttr = node.getAttribute(`${tag}target`);
             if (targetAttr) {
+                targetAttr = targetAttr.replace(thisTag, `[${tag}id="${nodeId}"]`);
                 target = document.querySelector(targetAttr);
             }
 
@@ -33,13 +44,13 @@ function assignEvents() {
             for (const cls of splitted) {
                 switch (cls[0]) {
                     case "-":
-                        remove.push(cls.substring(1))
+                        remove.push(cls.substring(1));
                         break;
                     case "+":
-                        add.push(cls.substring(1))
+                        add.push(cls.substring(1));
                         break;
                     default:
-                        toggle.push(cls.substring(0))
+                        toggle.push(cls.substring(0));
                         break;
                 };
             }

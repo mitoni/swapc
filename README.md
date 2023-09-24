@@ -50,6 +50,18 @@ You can define a target with `sw-target` attribute
 >
     I am the trigger
 </div>
+
+Every node containing an `sw` tag will be associated with an unique id `sw-id`. In this way you can query starting from this node by using the `$this` word (jQuery ❤️).
+For example: 
+```html
+<div 
+    sw-mouseenter="text-red" sw-mouseleave="text-red" sw-target="$this p"
+>
+    Select the following child paragraph
+    <p>
+        I am the target paragraph
+    </p>
+</div>
 ```
 
 ## What will do 
