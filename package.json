@@ -1,0 +1,8 @@
+{
+  "name": "swapc",
+  "version": "0.0.1",
+  "description": "hypertext based class swap",
+  "main": "src/swapc.js",
+  "author": "Michele Tonizzo",
+  "license": "MIT"
+}

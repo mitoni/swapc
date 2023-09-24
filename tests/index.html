@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../src/swapc.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="transition-color duration-1000" sw-mouseenter="+text-red-500" sw-mouseleave="-text-red-500">
+        Red on mouse over
+    </div>
+
+    <div class="transition-color duration-1000" id="target">
+        Target
+    </div>
+
+    <div sw-mouseenter="+text-blue-500" sw-mouseleave="-text-blue-500" sw-target="#target">
+        Over this, will make Target blue
+    </div>
+
+    <div class="text-orange-500 transition-color duration-1000" sw-mouseenter="text-orange-500"
+        sw-mouseleave="text-orange-500">
+        This will toggle the orange text on mouse over
+    </div>
+
+    <div class="duration-1000" sw-mouseenter="translate-x-10" sw-mouseleave="translate-x-10">
+        I will move to the right
+    </div>
+
+</body>
+
+</html>
