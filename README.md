@@ -50,6 +50,7 @@ You can define a target with `sw-target` attribute
 >
     I am the trigger
 </div>
+```
 
 Every node containing an `sw` tag will be associated with an unique id `sw-id`. In this way you can query starting from this node by using the `$this` word (jQuery ❤️).
 For example: 
