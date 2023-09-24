@@ -18,37 +18,32 @@ You can select a different node as target of the function by speciifying the `sw
 
 There are three methods of swapping between classes: add, remove and toggle.
 To add a class at a certain event you write it with a + at the beginning, and a - to remove it. For example to make a text red on mouse enter and back to black on mouse leave:
-`html
-<div
-    sw-mouseenter="+text-red"
-    sw-mouseleave="-text-red"
->
-    Text
-</div>
-`
+    <div
+        sw-mouseenter="+text-red"
+        sw-mouseleave="-text-red"
+    >
+        Text
+    </div>
 
 Or just toggling the class:
-`html
-<div
-    sw-mouseenter="text-red"
-    sw-mouseleave="text-red"
->
-    Text
-</div>
+    <div
+        sw-mouseenter="text-red"
+        sw-mouseleave="text-red"
+    >
+        Text
+    </div>
 
 You can define a target with `sw-target` attribute
-`html
-<div id="target">
-    I will become red
-</div>
-<div
-    sw-target="#target"
-    sw-mouseenter="text-red"
-    sw-mouseleave="text-red"
->
-    I am the trigger
-</div>
-`
+    <div id="target">
+        I will become red
+    </div>
+    <div
+        sw-target="#target"
+        sw-mouseenter="text-red"
+        sw-mouseleave="text-red"
+    >
+        I am the trigger
+    </div>
 
 ## What will do 
 Don't know yet. It's at eary stage and will add functionality day by day.
