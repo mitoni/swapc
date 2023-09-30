@@ -27,6 +27,8 @@ function id(t = 6) {
 }
 
 function assignEvents() {
+    console.log("assignEvents");
+
     for (const event of directEvents) {
         const attr = tag + event;
         const nodes = document.querySelectorAll(`[${attr}]`);
@@ -85,4 +87,4 @@ function assignEvents() {
     }
 }
 
-window.onload = assignEvents;
+window.addEventListener("load", assignEvents);
