@@ -1,6 +1,6 @@
 {
   "name": "swapc",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "hypertext class swap",
   "main": "dist/swapc.min.js",
   "author": "Michele Tonizzo",
