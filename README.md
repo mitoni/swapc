@@ -16,6 +16,13 @@ Supported events are all events that can be registered by the `node.addEventList
 
 You can select a different node as target of the function by speciifying the `sw-target` attribute with a query selector.
 
+## How to use
+Best way for now is to use UNPKG and import swapc in the script tag
+```html
+<script src="https://unpkg.com/swapc@latest/dist/swapc.min.js"></script>
+
+```
+
 ### Syntax
 There are three methods of swapping between classes: add, remove and toggle.
 To add a class at a certain event you write it with a + at the beginning, and a - to remove it. For example to make a text red on mouse enter and back to black on mouse leave:
