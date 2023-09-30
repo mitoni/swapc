@@ -1,8 +1,24 @@
 {
   "name": "swapc",
-  "version": "0.0.1",
-  "description": "hypertext based class swap",
-  "main": "src/swapc.js",
+  "version": "0.0.6",
+  "description": "hypertext class swap",
+  "main": "dist/swapc.min.js",
   "author": "Michele Tonizzo",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist/*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mitoni/swapc.git"
+  },
+  "scripts": {
+    "clean": "rm -rf dist && mkdir dist",
+    "compile": "cp -r src/* dist/ && yarn uglify",
+    "uglify": "uglifyjs dist/swapc.js --mangle --compress --output dist/swapc.min.js",
+    "prepublish": "yarn clean && yarn compile"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.17.4"
+  }
 }
